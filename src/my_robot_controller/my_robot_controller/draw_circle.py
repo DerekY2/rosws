@@ -9,8 +9,8 @@ class DrawCircleNode(Node):
     super().__init__("draw_circle")
     self.cmd_vel_pub_ = self.create_publisher(Twist, "/turtle1/cmd_vel", 10)
     self.timer = self.create_timer(0.5, self.send_velocity_command)
-    self.timer = self.create_timer(0.5, self.sballs)
-    self.get_logger().info("Draw circle node has been started")
+    self.timer = self.create_timer(0.5, self.balls)
+    self.get_logger().info("Draw circle node1 has been started")
 
   def send_velocity_command(self):
     msg = Twist()
@@ -21,8 +21,6 @@ class DrawCircleNode(Node):
   def balls(self):
     msg = str()
     
-
-
 def main(args=None):
   rclpy.init(args=args)
   node = DrawCircleNode()
